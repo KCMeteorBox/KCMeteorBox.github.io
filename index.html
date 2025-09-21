@@ -13,7 +13,6 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      /* 淡紫色垂直渐变背景（加深一点，让流星更明显） */
       background: linear-gradient(to bottom, #e6d4ff, #c9aaff);
       color: #333;
       overflow: hidden;
@@ -33,19 +32,27 @@
       animation: fadeIn 1s ease-in-out forwards;
       opacity: 0;
     }
+    
+    /* 公告内容样式 - 添加与标题相同的动画效果 */
+    .announcement-content {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out forwards;
+      opacity: 0;
+      animation-delay: 0.3s; /* 稍微延迟，形成序列动画 */
+    }
+    
+    .announcement-content p {
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
     @keyframes fadeIn {
       to {
         opacity: 1;
         transform: translateY(-10px);
       }
-    }
-
-    /* 公告内容样式 */
-    .announcement-content {
-      margin-bottom: 20px;
-      line-height: 1.6;
-      font-size: 15px;
-      text-align: center;
     }
 
     /* 更新日志样式 */
@@ -57,6 +64,7 @@
       animation: slideIn 1s ease-in-out forwards;
       opacity: 0;
       transform: translateY(10px);
+      animation-delay: 0.6s; /* 进一步延迟 */
       max-height: 220px;
       overflow-y: auto;
       background-color: rgba(255, 255, 255, 0.6);
@@ -104,7 +112,9 @@
       margin: 0 auto 25px;
       transition: transform 0.3s ease;
       box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-      animation: pulse 2s infinite;
+      animation: pulse 2s infinite, fadeIn 1s ease-in-out forwards;
+      opacity: 0;
+      animation-delay: 0.9s; /* 按钮最后出现 */
     }
     .qq-group-btn:hover {
       transform: scale(1.05);
@@ -140,6 +150,7 @@
       animation: fadeInUp 1.5s ease-in-out forwards;
       opacity: 0;
       transform: translateY(10px);
+      animation-delay: 1.2s;
       max-height: 180px;
       overflow-y: auto;
     }
@@ -191,12 +202,13 @@
       background-color: var(--dialog-bg);
       color: var(--dialog-text-color);
       box-shadow: var(--dialog-button-shadow);
-      animation: fadeIn 0.5s ease-in-out;
+      animation: fadeIn 0.5s ease-in-out forwards;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1000;
+      opacity: 0;
     }
     dialog::backdrop {
       background: rgba(226, 214, 255, 0.7);
@@ -257,24 +269,23 @@
     </div>
 
     <div class="update-log">
-      <div class="update-item"><span class="version">⪧</span>：功能列表--</div>
-      <div class="update-item"><span class="version">⩥</span>：·人物速度·修改人物移动速度</div>
-      <div class="update-item"><span class="version">⩥</span>：·实时坐标·随时随地显示人物坐标</div>
-      <div class="update-item"><span class="version">⩥</span>：·坐标传送·修改人物坐标</div>
-      <div class="update-item"><span class="version">⩥</span>：·锁定坐标·锁定指定玩家的坐标</div>
-      <div class="update-item"><span class="version">⩥</span>：·人物绘制·（透视）绘制人物方框、射线、坐标、方向等</div>
-      <div class="update-item"><span class="version">⩥</span>：·人物穿墙·无视障碍物</div>
-      <div class="update-item"><span class="version">⩥</span>：·重复发言·发送n次指定内容（类似刷屏）</div>
-      <div class="update-item"><span class="version">⩥</span>：·围观刷屏·利用围观提示刷屏</div>
-      <div class="update-item"><span class="version">⩥</span>：·不限字数·目前只能动态回复字数不限</div>
-      <div class="update-item"><span class="version">⩥</span>：·强发动态·狼来了模式强制发送动态</div>
-      <div class="update-item"><span class="version">⩥</span>：·水果消消乐修改·与网上GG修改器通关羊了个羊一样</div>
-      <div class="update-item"><span class="version">⪧</span>：更新日志--</div>
+      <div class="update-item"><span class="version">v2.1</span>：·人物速度·修改人物移动速度</div>
+      <div class="update-item"><span class="version">v2.0</span>：·实时坐标·随时随地显示人物坐标</div>
+      <div class="update-item"><span class="version">v1.9</span>：·坐标传送·修改人物坐标</div>
+      <div class="update-item"><span class="version">v1.8</span>：·锁定坐标·锁定指定玩家的坐标</div>
+      <div class="update-item"><span class="version">v1.7</span>：·人物绘制·（透视）绘制人物方框、射线、坐标、方向等</div>
+      <div class="update-item"><span class="version">v1.6</span>：·人物穿墙·无视障碍物</div>
+      <div class="update-item"><span class="version">v1.5</span>：·重复发言·发送n次指定内容（类似刷屏）</div>
+      <div class="update-item"><span class="version">v1.4</span>：·围观刷屏·利用围观提示刷屏</div>
+      <div class="update-item"><span class="version">v1.3</span>：·不限字数·目前只能动态回复字数不限</div>
+      <div class="update-item"><span class="version">v1.2</span>：·强发动态·狼来了模式强制发送动态</div>
+      <div class="update-item"><span class="version">v1.1</span>：·水果消消乐修改·与网上GG修改器通关羊了个羊一样</div>
+      <div class="update-item"><span class="version">v1.0</span>：日志初始化</div>
     </div>
 
     <a href="" class="qq-group-btn">下载</a>
 
-    <!-- 弹窗（补全缺失的DOM结构） -->
+    <!-- 弹窗 -->
     <dialog id="cs2Alert">
       <button class="close-btn">&times;</button>
       <h2>温馨提示</h2>
@@ -293,11 +304,11 @@
     const canvas = document.getElementById('particles-bg');
     const ctx = canvas.getContext('2d');
     const particles = [];
-    const meteors = []; // 流星数组
+    const meteors = [];
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // 粒子类（淡紫色星点）
+    // 粒子类
     class Particle {
       constructor() {
         this.x = Math.random() * window.innerWidth;
@@ -321,43 +332,146 @@
       }
     }
 
-    // 流星类（补全draw方法和重置逻辑）
+    // 流星类
     class Meteor {
       constructor() {
-        this.reset(); // 初始化时调用重置，设置初始位置
+        this.reset();
       }
-      // 重置流星位置和属性（超出屏幕后调用）
+      
       reset() {
-        // 随机从屏幕左侧或上方出现，避免从中间突然冒出
         if (Math.random() > 0.5) {
-          this.x = -50; // 左侧外
-          this.y = Math.random() * window.innerHeight / 2; // 上半屏
+          this.x = -50;
+          this.y = Math.random() * window.innerHeight / 2;
         } else {
-          this.x = Math.random() * window.innerWidth; // 全屏宽度
-          this.y = -50; // 上侧外
+          this.x = Math.random() * window.innerWidth;
+          this.y = -50;
         }
-        this.size = Math.random() * 2 + 1; // 流星本体大小（1-3px）
-        this.speedX = Math.random() * 5 + 5; // 水平速度（5-10px/帧，向右）
-        this.speedY = Math.random() * 3 + 2; // 垂直速度（2-5px/帧，向下）
-        this.opacity = Math.random() * 0.4 + 0.3; // 透明度（0.3-0.7）
-        this.trailLength = Math.random() * 30 + 20; // 尾迹长度（20-50px）
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 5 + 5;
+        this.speedY = Math.random() * 3 + 2;
+        this.opacity = Math.random() * 0.4 + 0.3;
+        this.trailLength = Math.random() * 30 + 20;
       }
+      
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-        // 超出屏幕右下角后重置
         if (this.x > window.innerWidth + 50 || this.y > window.innerHeight + 50) {
           this.reset();
         }
       }
-      // 关键：绘制流星（本体+渐变尾迹）
+      
       draw() {
         ctx.beginPath();
-        // 绘制流星尾迹（从流星当前位置向后延伸）
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(
-          this.x - this.speedX * this.trailLength / 5, // 尾迹起点（根据速度方向计算）
+          this.x - this.speedX * this.trailLength / 5,
           this.y - this.speedY * this.trailLength / 5
         );
-        // 尾迹样式：渐变透明，淡紫色
-        const
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.lineWidth = this.size;
+        ctx.stroke();
+        
+        // 流星头部
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
+        ctx.fill();
+      }
+    }
+
+    // 初始化粒子
+    function initParticles() {
+      particles.length = 0;
+      const count = Math.floor(window.innerWidth / 15);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    // 初始化流星
+    function initMeteors() {
+      meteors.length = 0;
+      const count = 5; // 同时存在的流星数量
+      for (let i = 0; i < count; i++) {
+        meteors.push(new Meteor());
+      }
+    }
+
+    // 动画循环
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 更新和绘制粒子
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      // 更新和绘制流星
+      meteors.forEach(meteor => {
+        meteor.update();
+        meteor.draw();
+      });
+      
+      requestAnimationFrame(animate);
+    }
+
+    // 鼠标跟随特效
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-follower';
+    document.body.appendChild(cursor);
+
+    function handleMove(e) {
+      let x, y;
+      if (e.type.includes('touch')) {
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
+      } else {
+        x = e.clientX;
+        y = e.clientY;
+      }
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+      cursor.style.opacity = '1';
+    }
+
+    // 事件监听
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('touchmove', handleMove);
+    document.addEventListener('mouseout', () => cursor.style.opacity = '0');
+    document.addEventListener('touchend', () => cursor.style.opacity = '0');
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    });
+
+    // 弹窗逻辑
+    const dialog = document.getElementById('cs2Alert');
+    const closeBtn = dialog.querySelector('.close-btn');
+    const dialogButton = dialog.querySelector('.dialog-button');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // 延迟显示弹窗，与页面动画协调
+      setTimeout(() => {
+        dialog.showModal();
+      }, 1500);
+    });
+
+    closeBtn.addEventListener('click', () => dialog.close());
+    dialogButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') e.preventDefault();
+    });
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    // 初始化
+    initParticles();
+    initMeteors();
+    animate();
+  </script>
+</body>
+</html>
