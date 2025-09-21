@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>遗迹公告</title>
+  <title>KC-MeteorBox-CX</title>
   <style>
     /* 全局样式：禁止网页滚动 */
     * {
@@ -17,44 +17,6 @@
       color: #fff;
       overflow: hidden; /* 核心：禁止页面滚动 */
       height: 100vh; /* 固定视口高度 */
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 顶部滚动横幅（跑马灯） */
-    .scroll-banner {
-      background-color: rgba(255, 77, 79, 0.15);
-      border-bottom: 1px solid rgba(255, 77, 79, 0.3);
-      height: 40px;
-      line-height: 40px;
-      overflow: hidden;
-      position: relative;
-      z-index: 20;
-    }
-    .scroll-content {
-      position: absolute;
-      white-space: nowrap;
-      left: 100%; /* 初始位置在右侧 */
-      color: #ffccc7; /* 浅红色调，适配emo风格 */
-      font-size: 14px;
-      animation: scroll 30s linear infinite; /* 延长滚动时间适配更多内容 */
-    }
-    .scroll-content span {
-      margin: 0 20px;
-    }
-    @keyframes scroll {
-      0% { left: 100%; }
-      100% { left: -100%; } /* 滚动到左侧消失，实现循环 */
-    }
-
-    .container {
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 10;
-      flex: 1; /* 占满剩余高度，避免溢出 */
       display: flex;
       flex-direction: column;
     }
@@ -289,86 +251,34 @@
   </style>
 </head>
 <body>
-  <!-- 顶部滚动横幅（跑马灯语录）- 新增更多emo语句 -->
-  <div class="scroll-banner">
-    <div class="scroll-content">
-      <span>深夜的烟，烧不尽心里的空🤡</span>
-      <span>我笑着说没事，其实快碎了🤡</span>
-      <span>热闹是他们的，我什么都没有🤡</span>
-      <span>熬到天亮，也等不到一句晚安🤡</span>
-      <span>假装快乐，比真难过还累🤡</span>
-      <span>后来啊，连崩溃都要选好时间🤡</span>
-      <span>心里藏着好多事，却没一个能说的人🤡</span>
-      <span>走了很久，发现还是一个人在赶路🤡</span>
-      <span>朋友圈的乐观，都是给别人看的🤡</span>
-      <span>道理都懂，可情绪就是不听话🤡</span>
-      <span>越想靠近谁，就越怕被推开🤡</span>
-      <span>白天是搞笑的废物，晚上是emo的怪物🤡</span>
-      <span>难过的时候，连听歌都像在说自己🤡</span>
-      <span>有些话，只能烂在心里自生自灭🤡</span>
-    </div>
-  </div>
-
   <canvas id="particles-bg"></canvas>
   
   <div class="container">
-    <h1>遗迹公告</h1>
+    <h1>MeteorBox</h1>
     
     <div class="announcement-content">
-      <p>各位遗迹的使用者们，感谢大家一直以来的支持！</p>
-      <p>最新版本 <span style="color:#FF4D4F; font-weight:600">v2.2</span> 已上线，修复公益版本打不开的问题，为大家带来更稳定的体验。</p>
+      <p>欢迎使用推理学院MeteorBox</p>
+      <p>当前版本 <span style="color:#FF4D4F; font-weight:600">v3.0</span>-</p>
     </div>
 
-    <!-- 更新日志 -->
+    <!-- 功能列表 -->
     <div class="update-log">
-      <div class="update-item"><span class="version">v2.1</span>：修复公益版本打不开的问题</div>
-      <div class="update-item"><span class="version">v2.0</span>：优化UI设计，新增"藏头"功能</div>
-      <div class="update-item"><span class="version">v1.9</span>：新增旧版本注入器，避免新版本检测；补充使用教程</div>
-      <div class="update-item"><span class="version">v1.8</span>：新增加强插件，提升解析强度</div>
-      <div class="update-item"><span class="version">v1.7</span>：优化解析算法，减少加载失败概率</div>
-      <div class="update-item"><span class="version">v1.6</span>：新增网络大片网站入口，懂得都懂</div>
-      <div class="update-item"><span class="version">v1.5</span>：优化解析逻辑，增强反自瞄功能</div>
-      <div class="update-item"><span class="version">v1.4</span>：新增公益版本，降低使用门槛</div>
-      <div class="update-item"><span class="version">v1.3</span>：更换注入器核心（原版本为旧版，存在兼容问题）</div>
-      <div class="update-item"><span class="version">v1.2</span>：内置过检测模块，删除已知BUG</div>
-      <div class="update-item"><span class="version">v1.1</span>：优化UI交互逻辑，提升操作流畅度</div>
-      <div class="update-item"><span class="version">v1.0</span>：初始版本，支持卡密登录，包含完整核心功能</div>
+      <div class="update-item"><span class="version">v2.1</span>：·人物速度·修改人物移动速度</div>
+      <div class="update-item"><span class="version">v2.0</span>：·实时坐标·随时随地显示人物坐标</div>
+      <div class="update-item"><span class="version">v1.9</span>：·坐标传送·修改人物坐标</div>
+      <div class="update-item"><span class="version">v1.8</span>：·锁定坐标·锁定指定玩家的坐标</div>
+      <div class="update-item"><span class="version">v1.7</span>：·人物绘制·（透视）绘制人物方框、射线、坐标、方向等</div>
+      <div class="update-item"><span class="version">v1.6</span>：·人物穿墙·无视障碍物</div>
+      <div class="update-item"><span class="version">v1.5</span>：·重复发言·发送n次指定内容（类似刷屏）</div>
+      <div class="update-item"><span class="version">v1.4</span>：·围观刷屏·利用围观提示刷屏</div>
+      <div class="update-item"><span class="version">v1.3</span>：·不限字数·目前只能动态回复字数不限</div>
+      <div class="update-item"><span class="version">v1.2</span>：·强发动态·狼来了模式强制发送动态</div>
+      <div class="update-item"><span class="version">v1.1</span>：·水果消消乐修改·与网上GG修改器通关羊了个羊一样</div>
+      <div class="update-item"><span class="version">v1.0</span>：日志</div>
     </div>
 
     <!-- QQ群按钮 -->
     <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=Vl56edmlN8C5qU0uSuRJw5Wmx9F5RL2PDXXcCvhd5ScRLVY1T58btMpWvbiR1xk2&busi_data=eyJncm91cENvZGUiOiIxMDExMjk0NzkxIiwidG9rZW4iOiJ2ODhON0dGTExzVFJkUUJJQlp5eldGWW5CREZqTlZSV3dnN0QwMWh0QVVZQU5Mc1h5d3JXdDNuVEJTRFRVL1M2IiwidWluIjoiMzM2MzM4ODU0NSJ9&data=nMJUwPHG2TszP15JQFt1fI-AkWK8gkMqa_5jxtg0RO-jGigrLEr2YlfRIFImlB9j8hzy-VknVfI56dF1ibqMAA&svctype=4&tempid=h5_group_info" class="qq-group-btn">加入QQ群</a>
-
-    <!-- 底部emo语录 - 新增更多内容 -->
-    <div class="emo-quotes">
-      <p>“深夜的孤独，像无人回应的呐喊，消散在黑暗中🤡。”</p>
-      <p>“回忆是场冷雨，淋透了我，却再也等不到撑伞的人🤡。”</p>
-      <p>“我以为我能习惯孤独，直到深夜的寂静让我窒息🤡。”</p>
-      <p>“屏幕亮了又暗，始终没有我等的那条消息🤡。”</p>
-      <p>“笑着说‘我没事’，转身却红了眼眶🤡。”</p>
-      <p>“深夜的酒，喝不醉心里的愁，只醉了假装坚强的我🤡。”</p>
-      <p>“所有人都在向前走，只有我停在回忆里打转🤡。”</p>
-      <p>“明明很累，却睡不着，心里像压着千斤石头🤡。”</p>
-      <p>“热闹的人群里，我像个透明的影子，没人在意🤡。”</p>
-      <p>“攒了满肚子的话，最后只说了句‘没事’🤡。”</p>
-      <p>“后来学会了把情绪藏在‘哈哈’里，谁也看不见🤡。”</p>
-      <p>“有些人走着走着就散了，连告别都很敷衍🤡。”</p>
-      <p>“越长大越发现，能依靠的只有自己，别无选择🤡。”</p>
-      <p>“那些没说出口的委屈，都变成了深夜的眼泪🤡。”</p>
-      <p>“好像做什么都不对，连呼吸都觉得多余🤡。”</p>
-      <p>“热闹过后的冷清，比一直孤独更让人难受🤡。”</p>
-      <p>“我在等一个人，可连我自己都不知道在等谁🤡。”</p>
-      <p>“把期望降低，把依赖变少，就不会那么难过了吧🤡。”</p>
-    </div>
-  </div>
-
-  <!-- 新增弹窗结构 -->
-  <dialog id="cs2Alert">
-    <h2>重要更新通知</h2>
-    <p>遗迹已推出CS2专用公益辅助程序！</p>
-    <p>立即加入QQ群获取最新版本，享受稳定辅助体验~</p>
-    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=Vl56edmlN8C5qU0uSuRJw5Wmx9F5RL2PDXXcCvhd5ScRLVY1T58btMpWvbiR1xk2&busi_data=eyJncm91cENvZGUiOiIxMDExMjk0NzkxIiwidG9rZW4iOiJ2ODhON0dGTExzVFJkUUJJQlp5eldGWW5CREZqTlZSV3dnN0QwMWh0QVVZQU5Mc1h5d3JXdDNuVEJTRFRVL1M2IiwidWluIjoiMzM2MzM4ODU0NSJ9&data=nMJUwPHG2TszP15JQFt1fI-AkWK8gkMqa_5jxtg0RO-jGigrLEr2YlfRIFImlB9j8hzy-VknVfI56dF1ibqMAA&svctype=4&tempid=h5_group_info" class="dialog-button">加入QQ群下载</a>
-    <button class="close-btn">×</button>
-  </dialog>
 
   <script>
     // 粒子背景特效
