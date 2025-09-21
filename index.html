@@ -13,13 +13,14 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      /* 改为淡紫色垂直渐变背景 */
-      background: linear-gradient(to bottom, #f0e6fa, #d8bfff);
-      color: #333; /* 文字颜色改为深灰色，提升可读性 */
-      overflow: hidden; /* 核心：禁止页面滚动 */
-      height: 100vh; /* 固定视口高度 */
+      /* 淡紫色垂直渐变背景（加深一点，让流星更明显） */
+      background: linear-gradient(to bottom, #e6d4ff, #c9aaff);
+      color: #333;
+      overflow: hidden;
+      height: 100vh;
       display: flex;
       flex-direction: column;
+      padding: 20px;
     }
 
     /* 标题样式 */
@@ -27,8 +28,8 @@
       text-align: center;
       font-size: 3vw;
       margin-bottom: 15px;
-      color: #9333ea; /* 标题改为深紫色，适配背景 */
-      text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+      color: #8b5cf6;
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
       animation: fadeIn 1s ease-in-out forwards;
       opacity: 0;
     }
@@ -44,27 +45,27 @@
       margin-bottom: 20px;
       line-height: 1.6;
       font-size: 15px;
+      text-align: center;
     }
 
     /* 更新日志样式 */
     .update-log {
-      border: 2px solid rgba(147, 51, 234, 0.1); /* 边框改为淡紫色系 */
+      border: 2px solid rgba(139, 92, 246, 0.1);
       border-radius: 15px;
       padding: 15px;
       margin-bottom: 20px;
       animation: slideIn 1s ease-in-out forwards;
       opacity: 0;
       transform: translateY(10px);
-      max-height: 220px; /* 固定高度，避免溢出 */
-      overflow-y: auto; /* 内部滚动（仅日志区域） */
-      background-color: rgba(255, 255, 255, 0.5); /* 增加半透明背景，提升辨识度 */
+      max-height: 220px;
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 0.6);
     }
-    /* 日志内部滚动条美化 */
     .update-log::-webkit-scrollbar {
       width: 6px;
     }
     .update-log::-webkit-scrollbar-thumb {
-      background-color: rgba(147, 51, 234, 0.5); /* 滚动条改为紫色系 */
+      background-color: rgba(139, 92, 246, 0.5);
       border-radius: 3px;
     }
     @keyframes slideIn {
@@ -75,19 +76,19 @@
     }
     .update-item {
       padding: 8px 0;
-      border-bottom: 1px dashed rgba(147, 51, 234, 0.1); /* 分隔线改为淡紫色系 */
+      border-bottom: 1px dashed rgba(139, 92, 246, 0.1);
       font-size: 14px;
     }
     .update-item:last-child {
       border-bottom: none;
     }
     .version {
-      color: #9333ea; /* 版本号改为深紫色 */
+      color: #8b5cf6;
       font-weight: 600;
       margin-right: 10px;
     }
 
-    /* QQ群按钮样式 */
+    /* 下载按钮样式 */
     .qq-group-btn {
       display: block;
       width: 80%;
@@ -95,31 +96,31 @@
       height: 55px;
       line-height: 55px;
       text-align: center;
-      background: linear-gradient(45deg, #9333ea, #a855f7); /* 按钮改为紫色渐变 */
+      background: linear-gradient(45deg, #8b5cf6, #a78bfa);
       color: #fff;
       text-decoration: none;
       border-radius: 30px;
       font-size: 1rem;
       margin: 0 auto 25px;
       transition: transform 0.3s ease;
-      box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); /* 阴影改为紫色系 */
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
       animation: pulse 2s infinite;
     }
     .qq-group-btn:hover {
       transform: scale(1.05);
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
-      100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+      0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+      100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
     }
 
-    /* 鼠标/手指跟随特效 */
+    /* 鼠标跟随特效 */
     .cursor-follower {
       position: fixed;
       width: 40px;
       height: 40px;
-      background: radial-gradient(circle, rgba(191, 153, 255, 0.3) 0%, transparent 70%); /* 跟随器改为紫色系 */
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -129,25 +130,24 @@
       mix-blend-mode: screen;
     }
 
-    /* 深夜emo语录样式（新增更多内容） */
+    /* 语录样式 */
     .emo-quotes {
-      margin-top: auto; /* 固定在容器底部 */
+      margin-top: auto;
       padding: 15px 0;
       font-style: italic;
-      color: #6b7280; /* 语录颜色改为中灰色，适配背景 */
+      color: #6b7280;
       text-align: center;
       animation: fadeInUp 1.5s ease-in-out forwards;
       opacity: 0;
       transform: translateY(10px);
-      max-height: 180px; /* 限制高度，避免遮挡内容 */
-      overflow-y: auto; /* 内容过多时可滚动 */
+      max-height: 180px;
+      overflow-y: auto;
     }
-    /* 语录区域滚动条美化 */
     .emo-quotes::-webkit-scrollbar {
       width: 4px;
     }
     .emo-quotes::-webkit-scrollbar-thumb {
-      background-color: rgba(147, 51, 234, 0.4); /* 滚动条改为紫色系 */
+      background-color: rgba(139, 92, 246, 0.4);
       border-radius: 2px;
     }
     @keyframes fadeInUp {
@@ -161,7 +161,7 @@
       font-size: 14px;
     }
 
-    /* 粒子背景特效 */
+    /* 粒子/流星背景容器 */
     #particles-bg {
       position: fixed;
       top: 0;
@@ -171,17 +171,17 @@
       z-index: -1;
     }
 
-    /* 新增弹窗样式 */
+    /* 弹窗样式 */
     dialog {
       --dialog-width: 80%;
       --dialog-max-width: 600px;
       --dialog-padding: 25px;
-      --dialog-border: 2px solid rgba(147, 51, 234, 0.3); /* 弹窗边框改为紫色系 */
+      --dialog-border: 2px solid rgba(139, 92, 246, 0.3);
       --dialog-radius: 15px;
-      --dialog-bg: #f9f5ff; /* 弹窗背景改为淡紫色 */
-      --dialog-text-color: #333; /* 弹窗文字改为深灰色 */
-      --dialog-button-bg: linear-gradient(45deg, #9333ea, #a855f7); /* 弹窗按钮改为紫色渐变 */
-      --dialog-button-shadow: 0 0 20px rgba(147, 51, 234, 0.3); /* 弹窗按钮阴影改为紫色系 */
+      --dialog-bg: #f5f0ff;
+      --dialog-text-color: #333;
+      --dialog-button-bg: linear-gradient(45deg, #8b5cf6, #a78bfa);
+      --dialog-button-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
       
       width: var(--dialog-width);
       max-width: var(--dialog-max-width);
@@ -198,24 +198,20 @@
       transform: translate(-50%, -50%);
       z-index: 1000;
     }
-
     dialog::backdrop {
-      background: rgba(240, 230, 250, 0.7); /* 弹窗背景改为淡紫色半透明 */
+      background: rgba(226, 214, 255, 0.7);
       backdrop-filter: blur(10px);
     }
-
     dialog h2 {
-      color: #9333ea; /* 弹窗标题改为深紫色 */
+      color: #8b5cf6;
       font-size: 1.2rem;
       margin-bottom: 15px;
-      text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
     }
-
     dialog p {
       line-height: 1.6;
       margin-bottom: 20px;
     }
-
     .dialog-button {
       all: unset;
       width: 100%;
@@ -231,22 +227,19 @@
       box-shadow: var(--dialog-button-shadow);
       animation: pulse 2s infinite;
     }
-
     .dialog-button:hover {
       transform: scale(1.05);
     }
-
     .close-btn {
       all: unset;
       position: absolute;
       top: 15px;
       right: 15px;
       font-size: 1.5rem;
-      color: #9333ea; /* 关闭按钮改为深紫色 */
+      color: #8b5cf6;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
     .close-btn:hover {
       transform: scale(1.1);
     }
@@ -260,10 +253,9 @@
     
     <div class="announcement-content">
       <p>欢迎使用推理学院MeteorBox</p>
-      <p>当前版本 <span style="color:#9333ea; font-weight:600">v3.0</span>-</p>
+      <p>当前版本 <span style="color:#8b5cf6; font-weight:600">v3.0</span></p>
     </div>
 
-    <!-- 功能列表 -->
     <div class="update-log">
       <div class="update-item"><span class="version">v2.1</span>：·人物速度·修改人物移动速度</div>
       <div class="update-item"><span class="version">v2.0</span>：·实时坐标·随时随地显示人物坐标</div>
@@ -276,22 +268,27 @@
       <div class="update-item"><span class="version">v1.3</span>：·不限字数·目前只能动态回复字数不限</div>
       <div class="update-item"><span class="version">v1.2</span>：·强发动态·狼来了模式强制发送动态</div>
       <div class="update-item"><span class="version">v1.1</span>：·水果消消乐修改·与网上GG修改器通关羊了个羊一样</div>
-      <div class="update-item"><span class="version">v1.0</span>：日志</div>
+      <div class="update-item"><span class="version">v1.0</span>：日志初始化</div>
     </div>
 
-    <!-- QQ群按钮 -->
     <a href="" class="qq-group-btn">下载</a>
 
-    <!-- 新增弹窗（原代码缺失，补充完整） -->
+    <!-- 弹窗（补全缺失的DOM结构） -->
     <dialog id="cs2Alert">
       <button class="close-btn">&times;</button>
       <h2>温馨提示</h2>
-      <p>请确保从官方渠道获取该工具，避免使用未经授权的版本，保护设备安全和账号信息。</p>
+      <p>请从官方渠道获取工具，避免使用非授权版本，保护设备安全与账号信息。</p>
       <button class="dialog-button">我知道了</button>
     </dialog>
+  </div>
+
+  <div class="emo-quotes">
+    <p>—— 每一次更新，都是为了更好的体验 ——</p>
+    <p>—— 保持热爱，奔赴下一场山海 ——</p>
+  </div>
 
   <script>
-    // 粒子背景特效
+    // 初始化画布
     const canvas = document.getElementById('particles-bg');
     const ctx = canvas.getContext('2d');
     const particles = [];
@@ -299,59 +296,67 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // 粒子类（颜色改为淡紫色系）
+    // 粒子类（淡紫色星点）
     class Particle {
       constructor() {
         this.x = Math.random() * window.innerWidth;
         this.y = Math.random() * window.innerHeight;
         this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25; // 减缓速度，更柔和
+        this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2; // 调整透明度，更协调
+        this.opacity = Math.random() * 0.5 + 0.2;
       }
-
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-        // 边界反弹
         if (this.x < 0 || this.x > window.innerWidth) this.speedX *= -1;
         if (this.y < 0 || this.y > window.innerHeight) this.speedY *= -1;
       }
-
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        // 粒子颜色改为淡紫色，与背景适配
-        ctx.fillStyle = `rgba(191, 153, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(167, 139, 250, ${this.opacity})`;
         ctx.fill();
       }
     }
 
-    // 新增流星类
+    // 流星类（补全draw方法和重置逻辑）
     class Meteor {
       constructor() {
-        // 随机初始位置（从屏幕上方或左侧出现）
-        this.x = Math.random() > 0.5 ? -50 : Math.random() * window.innerWidth;
-        this.y = Math.random() > 0.5 ? Math.random() * window.innerHeight / 2 : -50;
-        // 随机大小（1-3px）
-        this.size = Math.random() * 2 + 1;
-        // 随机速度（x方向5-10px/帧，y方向2-5px/帧，模拟斜向划过）
-        this.speedX = Math.random() * 5 + 5;
-        this.speedY = Math.random() * 3 + 2;
-        // 随机透明度（0.3-0.7）
-        this.opacity = Math.random() * 0.4 + 0.3;
-        // 流星尾迹长度（20-50px）
-        this.trailLength = Math.random() * 30 + 20;
+        this.reset(); // 初始化时调用重置，设置初始位置
       }
-
+      // 重置流星位置和属性（超出屏幕后调用）
+      reset() {
+        // 随机从屏幕左侧或上方出现，避免从中间突然冒出
+        if (Math.random() > 0.5) {
+          this.x = -50; // 左侧外
+          this.y = Math.random() * window.innerHeight / 2; // 上半屏
+        } else {
+          this.x = Math.random() * window.innerWidth; // 全屏宽度
+          this.y = -50; // 上侧外
+        }
+        this.size = Math.random() * 2 + 1; // 流星本体大小（1-3px）
+        this.speedX = Math.random() * 5 + 5; // 水平速度（5-10px/帧，向右）
+        this.speedY = Math.random() * 3 + 2; // 垂直速度（2-5px/帧，向下）
+        this.opacity = Math.random() * 0.4 + 0.3; // 透明度（0.3-0.7）
+        this.trailLength = Math.random() * 30 + 20; // 尾迹长度（20-50px）
+      }
       update() {
-        // 移动流星
         this.x += this.speedX;
         this.y += this.speedY;
-        // 超出屏幕范围后重置
+        // 超出屏幕右下角后重置
         if (this.x > window.innerWidth + 50 || this.y > window.innerHeight + 50) {
           this.reset();
         }
       }
-
-      reset()
+      // 关键：绘制流星（本体+渐变尾迹）
+      draw() {
+        ctx.beginPath();
+        // 绘制流星尾迹（从流星当前位置向后延伸）
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(
+          this.x - this.speedX * this.trailLength / 5, // 尾迹起点（根据速度方向计算）
+          this.y - this.speedY * this.trailLength / 5
+        );
+        // 尾迹样式：渐变透明，淡紫色
+        const
