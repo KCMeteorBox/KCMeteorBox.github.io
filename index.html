@@ -13,8 +13,9 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #000;
-      color: #fff;
+      /* 改为淡紫色垂直渐变背景 */
+      background: linear-gradient(to bottom, #f0e6fa, #d8bfff);
+      color: #333; /* 文字颜色改为深灰色，提升可读性 */
       overflow: hidden; /* 核心：禁止页面滚动 */
       height: 100vh; /* 固定视口高度 */
       display: flex;
@@ -26,8 +27,8 @@
       text-align: center;
       font-size: 3vw;
       margin-bottom: 15px;
-      color: #FF4D4F;
-      text-shadow: 0 0 10px rgba(255, 77, 79, 0.5);
+      color: #9333ea; /* 标题改为深紫色，适配背景 */
+      text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
       animation: fadeIn 1s ease-in-out forwards;
       opacity: 0;
     }
@@ -47,7 +48,7 @@
 
     /* 更新日志样式 */
     .update-log {
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(147, 51, 234, 0.1); /* 边框改为淡紫色系 */
       border-radius: 15px;
       padding: 15px;
       margin-bottom: 20px;
@@ -56,13 +57,14 @@
       transform: translateY(10px);
       max-height: 220px; /* 固定高度，避免溢出 */
       overflow-y: auto; /* 内部滚动（仅日志区域） */
+      background-color: rgba(255, 255, 255, 0.5); /* 增加半透明背景，提升辨识度 */
     }
     /* 日志内部滚动条美化 */
     .update-log::-webkit-scrollbar {
       width: 6px;
     }
     .update-log::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 77, 79, 0.5);
+      background-color: rgba(147, 51, 234, 0.5); /* 滚动条改为紫色系 */
       border-radius: 3px;
     }
     @keyframes slideIn {
@@ -73,14 +75,14 @@
     }
     .update-item {
       padding: 8px 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      border-bottom: 1px dashed rgba(147, 51, 234, 0.1); /* 分隔线改为淡紫色系 */
       font-size: 14px;
     }
     .update-item:last-child {
       border-bottom: none;
     }
     .version {
-      color: #FF4D4F;
+      color: #9333ea; /* 版本号改为深紫色 */
       font-weight: 600;
       margin-right: 10px;
     }
@@ -93,23 +95,23 @@
       height: 55px;
       line-height: 55px;
       text-align: center;
-      background: linear-gradient(45deg, #FF4D4F, #FF2E63);
+      background: linear-gradient(45deg, #9333ea, #a855f7); /* 按钮改为紫色渐变 */
       color: #fff;
       text-decoration: none;
       border-radius: 30px;
       font-size: 1rem;
       margin: 0 auto 25px;
       transition: transform 0.3s ease;
-      box-shadow: 0 0 20px rgba(255, 77, 79, 0.3);
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); /* 阴影改为紫色系 */
       animation: pulse 2s infinite;
     }
     .qq-group-btn:hover {
       transform: scale(1.05);
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 20px rgba(255, 77, 79, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(255, 77, 79, 0.6); }
-      100% { box-shadow: 0 0 20px rgba(255, 77, 79, 0.3); }
+      0% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
+      100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
     }
 
     /* 鼠标/手指跟随特效 */
@@ -117,7 +119,7 @@
       position: fixed;
       width: 40px;
       height: 40px;
-      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(191, 153, 255, 0.3) 0%, transparent 70%); /* 跟随器改为紫色系 */
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -132,7 +134,7 @@
       margin-top: auto; /* 固定在容器底部 */
       padding: 15px 0;
       font-style: italic;
-      color: #aaa;
+      color: #6b7280; /* 语录颜色改为中灰色，适配背景 */
       text-align: center;
       animation: fadeInUp 1.5s ease-in-out forwards;
       opacity: 0;
@@ -145,7 +147,7 @@
       width: 4px;
     }
     .emo-quotes::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 77, 79, 0.4);
+      background-color: rgba(147, 51, 234, 0.4); /* 滚动条改为紫色系 */
       border-radius: 2px;
     }
     @keyframes fadeInUp {
@@ -174,12 +176,12 @@
       --dialog-width: 80%;
       --dialog-max-width: 600px;
       --dialog-padding: 25px;
-      --dialog-border: 2px solid rgba(255, 77, 79, 0.3);
+      --dialog-border: 2px solid rgba(147, 51, 234, 0.3); /* 弹窗边框改为紫色系 */
       --dialog-radius: 15px;
-      --dialog-bg: #000;
-      --dialog-text-color: #fff;
-      --dialog-button-bg: linear-gradient(45deg, #FF4D4F, #FF2E63);
-      --dialog-button-shadow: 0 0 20px rgba(255, 77, 79, 0.3);
+      --dialog-bg: #f9f5ff; /* 弹窗背景改为淡紫色 */
+      --dialog-text-color: #333; /* 弹窗文字改为深灰色 */
+      --dialog-button-bg: linear-gradient(45deg, #9333ea, #a855f7); /* 弹窗按钮改为紫色渐变 */
+      --dialog-button-shadow: 0 0 20px rgba(147, 51, 234, 0.3); /* 弹窗按钮阴影改为紫色系 */
       
       width: var(--dialog-width);
       max-width: var(--dialog-max-width);
@@ -198,15 +200,15 @@
     }
 
     dialog::backdrop {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(240, 230, 250, 0.7); /* 弹窗背景改为淡紫色半透明 */
       backdrop-filter: blur(10px);
     }
 
     dialog h2 {
-      color: #FF4D4F;
+      color: #9333ea; /* 弹窗标题改为深紫色 */
       font-size: 1.2rem;
       margin-bottom: 15px;
-      text-shadow: 0 0 10px rgba(255, 77, 79, 0.5);
+      text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
     }
 
     dialog p {
@@ -240,7 +242,7 @@
       top: 15px;
       right: 15px;
       font-size: 1.5rem;
-      color: #fff;
+      color: #9333ea; /* 关闭按钮改为深紫色 */
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -258,7 +260,7 @@
     
     <div class="announcement-content">
       <p>欢迎使用推理学院MeteorBox</p>
-      <p>当前版本 <span style="color:#FF4D4F; font-weight:600">v3.0</span>-</p>
+      <p>当前版本 <span style="color:#9333ea; font-weight:600">v3.0</span>-</p>
     </div>
 
     <!-- 功能列表 -->
@@ -278,16 +280,26 @@
     </div>
 
     <!-- QQ群按钮 -->
-    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=Vl56edmlN8C5qU0uSuRJw5Wmx9F5RL2PDXXcCvhd5ScRLVY1T58btMpWvbiR1xk2&busi_data=eyJncm91cENvZGUiOiIxMDExMjk0NzkxIiwidG9rZW4iOiJ2ODhON0dGTExzVFJkUUJJQlp5eldGWW5CREZqTlZSV3dnN0QwMWh0QVVZQU5Mc1h5d3JXdDNuVEJTRFRVL1M2IiwidWluIjoiMzM2MzM4ODU0NSJ9&data=nMJUwPHG2TszP15JQFt1fI-AkWK8gkMqa_5jxtg0RO-jGigrLEr2YlfRIFImlB9j8hzy-VknVfI56dF1ibqMAA&svctype=4&tempid=h5_group_info" class="qq-group-btn">加入QQ群</a>
+    <a href="" class="qq-group-btn">下载</a>
+
+    <!-- 新增弹窗（原代码缺失，补充完整） -->
+    <dialog id="cs2Alert">
+      <button class="close-btn">&times;</button>
+      <h2>温馨提示</h2>
+      <p>请确保从官方渠道获取该工具，避免使用未经授权的版本，保护设备安全和账号信息。</p>
+      <button class="dialog-button">我知道了</button>
+    </dialog>
 
   <script>
     // 粒子背景特效
     const canvas = document.getElementById('particles-bg');
     const ctx = canvas.getContext('2d');
     const particles = [];
+    const meteors = []; // 流星数组
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    // 粒子类（颜色改为淡紫色系）
     class Particle {
       constructor() {
         this.x = Math.random() * window.innerWidth;
@@ -309,91 +321,37 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        // 粒子颜色改为淡紫色，与背景适配
+        ctx.fillStyle = `rgba(191, 153, 255, ${this.opacity})`;
         ctx.fill();
       }
     }
 
-    // 初始化粒子
-    function initParticles() {
-      particles.length = 0; // 清空旧粒子
-      const count = Math.floor(window.innerWidth / 15); // 按屏幕宽度适配粒子数量
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+    // 新增流星类
+    class Meteor {
+      constructor() {
+        // 随机初始位置（从屏幕上方或左侧出现）
+        this.x = Math.random() > 0.5 ? -50 : Math.random() * window.innerWidth;
+        this.y = Math.random() > 0.5 ? Math.random() * window.innerHeight / 2 : -50;
+        // 随机大小（1-3px）
+        this.size = Math.random() * 2 + 1;
+        // 随机速度（x方向5-10px/帧，y方向2-5px/帧，模拟斜向划过）
+        this.speedX = Math.random() * 5 + 5;
+        this.speedY = Math.random() * 3 + 2;
+        // 随机透明度（0.3-0.7）
+        this.opacity = Math.random() * 0.4 + 0.3;
+        // 流星尾迹长度（20-50px）
+        this.trailLength = Math.random() * 30 + 20;
       }
-    }
 
-    // 粒子动画
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-
-    // 鼠标/手指跟随特效
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-follower';
-    document.body.appendChild(cursor);
-
-    function handleMove(e) {
-      let x, y;
-      if (e.type.includes('touch')) {
-        x = e.touches[0].clientX;
-        y = e.touches[0].clientY;
-      } else {
-        x = e.clientX;
-        y = e.clientY;
+      update() {
+        // 移动流星
+        this.x += this.speedX;
+        this.y += this.speedY;
+        // 超出屏幕范围后重置
+        if (this.x > window.innerWidth + 50 || this.y > window.innerHeight + 50) {
+          this.reset();
+        }
       }
-      cursor.style.left = `${x}px`;
-      cursor.style.top = `${y}px`;
-      cursor.style.opacity = '1';
-    }
 
-    // 事件监听
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('touchmove', handleMove);
-    document.addEventListener('mouseout', () => cursor.style.opacity = '0');
-    document.addEventListener('touchend', () => cursor.style.opacity = '0');
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    });
-
-    // 初始化
-    initParticles();
-    animateParticles();
-
-    // 新增弹窗逻辑
-    const dialog = document.getElementById('cs2Alert');
-    const closeBtn = dialog.querySelector('.close-btn');
-
-    // 页面加载后显示弹窗
-    window.addEventListener('DOMContentLoaded', () => {
-      dialog.showModal();
-    });
-
-    // 关闭弹窗
-    closeBtn.addEventListener('click', () => {
-      dialog.close();
-    });
-
-    // 阻止ESC键关闭弹窗
-    dialog.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-      }
-    });
-
-    // 点击外部区域关闭弹窗
-    dialog.addEventListener('click', (e) => {
-      if (e.target === dialog) {
-        dialog.close();
-      }
-    });
-  </script>
-</body>
-</html>
+      reset()
